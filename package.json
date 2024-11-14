@@ -1,0 +1,76 @@
+{
+  "version": "0.1.5",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "publish": "publish",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "konnadex-crypto-wallet",
+  "author": "ugdesmond",
+  "module": "dist/konnadex-crypto-wallet.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/konnadex-crypto-wallet.cjs.production.min.js",
+      "limit": "500 KB"
+    },
+    {
+      "path": "dist/konnadex-crypto-wallet.esm.js",
+      "limit": "500 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.1.0",
+    "husky": "^8.0.2",
+    "size-limit": "^8.1.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@bitgo/utxo-lib": "https://github.com/ren-forks/bitgo-utxo-lib#b848585e65b42c48b98c207e72d7d3006c9a5da0",
+    "@solana/spl-token": "^0.2.0",
+    "@solana/web3.js": "^1.39.1",
+    "@truffle/hdwallet-provider": "^2.0.5",
+    "@waves/ts-lib-crypto": "^1.4.4-beta.1",
+    "@waves/waves-transactions": "^4.2.10",
+    "axios": "^0.27.2",
+    "bip32": "^3.0.1",
+    "bip39": "^3.0.4",
+    "bitcoinjs-lib": "^6.0.1",
+    "bs58": "^5.0.0",
+    "buffer-layout": "^1.2.2",
+    "ecpair": "^2.0.1",
+    "ed25519-hd-key": "^1.2.0",
+    "ethers": "^5.6.2",
+    "immutable": "^4.1.0",
+    "tiny-secp256k1": "^2.2.1",
+    "url": "^0.11.0"
+  }
+}
